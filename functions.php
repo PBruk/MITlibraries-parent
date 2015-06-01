@@ -195,7 +195,11 @@ function twentytwelve_scripts_styles() {
 	if (is_page('getit')) {
 		wp_enqueue_style('get-it');
 	}
-	
+
+		if (is_page('study')) {
+    wp_enqueue_style('grid');
+	}
+
 }
 
 add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
