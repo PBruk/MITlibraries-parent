@@ -115,18 +115,22 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style('hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array('libraries-global'), '1.0');
 
+	wp_register_style('skeleton', get_template_directory_uri() . '/css/skeleton.css', array('libraries-global'), '1.0');
+
+  wp_register_style('grid', get_template_directory_uri() . '/css/grid.css', array('libraries-global'), '1.0');
+
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
 	 */
 	wp_enqueue_style( 'twentytwelve-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentytwelve-style' ), '20121010' );
 	$wp_styles->add_data( 'twentytwelve-ie', 'conditional', 'lt IE 9' );
-	
+
 	/*  Register JS */
 
 	// Deregister WP Core jQuery, load Google's
   wp_deregister_script('jquery');
   wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false);
-	
+
 	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false);
 
 	wp_register_script('homeJS', get_template_directory_uri() . '/js/build/home.min.js', array('jquery', 'modernizr'), '2.2.0', true);
