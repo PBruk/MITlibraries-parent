@@ -15,22 +15,15 @@ global $isRoot;
 
 		<div class="featuredImage">
 			<?php echo the_post_thumbnail(700, 300); ?>
-		
 		</div>
-	
+
 	<?php endif; ?>
-	
-	
+	<div class="content-main flex-container">
+
 	<div class="entry-content">
 
 		<?php the_content(); ?>
-		
+
 	</div>
 
-	<footer class="entry-meta">
-		<?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
-	
 </div>
-
-<?php get_sidebar(); ?>
