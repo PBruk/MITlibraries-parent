@@ -131,14 +131,14 @@ get_header(); ?>
 										</div>
 
 										<?php if ($individual != ""): ?>
-										<div class="col-2">
+										<div class="Grid-cell right-border">
 											<h4>Total seats</h4>
 											<?php echo $individual; ?>
 										</div>
 										<?php endif; ?>
-										
+
 										<?php if ($spaces != ""): ?>
-										<div class="col-3">
+										<div class="Grid-cell">
 											<h4>Group spaces</h4>
 											<?php echo $spaces; ?>
 										</div>
@@ -146,16 +146,16 @@ get_header(); ?>
 									</div>
 								</div>
 							</li>
-						<?php endwhile; // end of the loop. ?>					
+						<?php endwhile; // end of the loop. ?>
 					</ul>
-					
+
 				</div>
 				<div class="col-2">
 					<?php get_sidebar(); ?>
 				</div>
-			</div><!-- end div.content-main -->		
+			</div><!-- end div.content-main -->
 		</div>
-		
+
 
 
 <?php get_footer(); ?>
