@@ -235,9 +235,6 @@
 	.locations-more {
 		@include rem-first--2-values(margin, 1.5, 0);
 	}
-	.locations-more h4 {
-		padding-top: 15px;
-	}
 }
 .wrap-cal-hours {
 	display: none;
