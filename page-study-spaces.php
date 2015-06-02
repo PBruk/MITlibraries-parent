@@ -30,7 +30,7 @@ get_header(); ?>
 					<a href="/hours/">See all library hours <i class="icon-arrow-right"></i></a>
 				</div>
 			</div>
-			
+
 			<div class="content-main flex-container">
 				<div class="content-page col-1">
 					<?php the_content(); ?>
@@ -44,35 +44,35 @@ get_header(); ?>
 								'posts_per_page' => -1,
 								'orderby' => 'menu_order',
 								'order' => 'ASC'
-								
-							);							
+
+							);
 							$subList = new WP_Query( $args );
-							
-						?>					
+
+						?>
 						<?php while ( $subList->have_posts() ) : $subList->the_post(); ?>
-						<?php 
+						<?php
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
-							
+
 							$subject = get_field("subject");
 							$phone = get_field("phone");
 							$building = get_field("building");
 							$spaces = get_field("group_spaces");
 							$individual = get_field("individual_spaces");
-							
+
 							$equipment = get_field("equipment");
 							$expert = get_field("expert");
-							
+
 							$title1 = get_field("tab_1_title");
 							$subtitle1 = get_field("tab_1_subtitle");
 							$content1 = get_field("tab_1_content");
-							
+
 							$title2 = get_field("tab_2_title");
 							$subtitle2 = get_field("tab_2_subtitle");
-							$content2 = get_field("tab_2_content");	
+							$content2 = get_field("tab_2_content");
 
 							$studyImage = get_field("study_space_image");
-							
+
 							$study24 = get_field("study_24");
 							$reserveText = get_field("reserve_text");
 							if ($reserveText == "") {
@@ -81,21 +81,22 @@ get_header(); ?>
 							$reserveUrl = get_field("reserve_url");
 
 
-							
+
 							$displayPage = get_field("display_page");
 							$pageID = $displayPage->ID;
 							$pageLink = get_permalink($pageID);
-							
+
 							$description = get_the_content();
-							
+
 							$temp = $post;
 							$post = $temp;
-							
+
 
 						?>
-							<li class="flex-container study-space">
+							<li class="study-space">
 								<div class="image-study-space" style="background-image: url(<?php echo $studyImage; ?>);"></div>
 								<div class="content--study-space">
+									<div class="study-space-meta">
 									<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
 									<div class="description">
 										<?php echo $description; ?>
@@ -106,10 +107,11 @@ get_header(); ?>
 									<?php if ($study24 == 1): ?>
 										<span> | </span><a class="space247 hidden-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 									<?php endif; ?>
-									
-									<div class="info--study-space flex-container">
-										<div class="col-1">
-										
+								</div>
+
+									<div class="Grid Grid--gutters sm-Grid--full small-Grid--fit">
+										<div class="Grid-cell right-border">
+
 											<h4><?php echo $subject ?></h4>
 											<div class="sub">
 												<?php if ($phone != ""): ?>
